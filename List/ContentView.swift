@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    // array 
     var friends = [
         friend(name: "Human", icon: "lock.open.fill", school: "School", Image: "cloud"),
         friend(name: "Human1", icon: "lock.open.fill", school: "School 1", Image: "cloud"),
