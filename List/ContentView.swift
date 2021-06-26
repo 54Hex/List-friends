@@ -10,22 +10,25 @@ import SwiftUI
 struct ContentView: View {
     // array 
     var friends = [
-        friend(name: "Human", icon: "lock.open.fill", school: "School", Image: "cloud"),
-        friend(name: "Human1", icon: "lock.open.fill", school: "School 1", Image: "cloud"),
-        friend(name: "Human2", icon: "lock.open.fill", school: "School 2", Image: "cloud"),
-        friend(name: "Human3", icon: "lock.open.fill", school: "School 3", Image: "cloud")]
+        friend(name: "1", icon: "lock.open.fill", school: "PHS", Image: "sloth1"),
+        friend(name: "2", icon: "lock.open.fill", school: "School 1", Image: "sloth2"),
+        friend(name: "3", icon: "lock.open.fill", school: "School 2", Image: "sloth3")]
     
     
     var body: some View {
         NavigationView {
             List(friends) { friend in
-                Image(systemName: friend.icon)
-                    .frame(width: 50)
-                VStack(alignment: .leading) {
-                    Text(friend.name)
-                        .bold()
-                    Text(friend.school)
-                        .font(.subheadline)
+                NavigationLink(destination: VictimDetailView(friend: friend)) {
+                    Image(systemName: friend.icon)
+                    
+                    //vstack
+                    VStack(alignment: .leading) {
+                        Text(friend.name)
+                            .bold()
+                        Text(friend.school)
+                            .frame(height: 30)
+                    }
+                    
                 }
             }
             //title >:D

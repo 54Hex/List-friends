@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//list 
+//list
 struct friend: Identifiable {
     // Identifier. Something like IC likddat 
     var id = UUID()
