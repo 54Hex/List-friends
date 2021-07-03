@@ -9,31 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     // array 
-    var friends = [
-        friend(name: "1", icon: "lock.open.fill", school: "PHS", Image: "sloth1"),
-        friend(name: "2", icon: "lock.open.fill", school: "School 1", Image: "sloth2"),
-        friend(name: "3", icon: "lock.open.fill", school: "School 2", Image: "sloth3")]
+    @State var friends = [
+        friend(name: "WX", icon: "lock.open.fill", school: "Presbyterian High School", Image: "sloth1", attack: 90.0, defence: 100.0, replySpeed: 80.0),
+        friend(name: "2", icon: "lock.open.fill", school: "School 1", Image: "sloth2", attack: 90.0, defence: 100.0, replySpeed: 50.0),
+        friend(name: "3", icon: "lock.open.fill", school: "School 2", Image: "sloth3", attack: 100.0, defence: 100.0, replySpeed: 0.0)]
     
     
     var body: some View {
         NavigationView {
-            List(friends) { friend in
-                NavigationLink(destination: VictimDetailView(friend: friend)) {
-                    Image(systemName: friend.icon)
-                    
-                    //vstack
+            List(0..<friends.count) { index in
+                NavigationLink(destination: VictimDetailView(friend: $friends[index])) {
+                    Image(systemName: friends[index].icon)
                     VStack(alignment: .leading) {
-                        Text(friend.name)
-                            .bold()
-                        Text(friend.school)
-                            .frame(height: 30)
+                        Text(friends[index].name)
+                            .font(.headline)
+                        Text(friends[index].school)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        
+                        //vstack
                     }
                     
                 }
             }
-            //title >:D
-            .navigationTitle("Innocent Victims >:D")
         }
+        //title >:D
+        .navigationTitle("Innocent Victims >:D")
     }
 }
 
