@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     // array 
     @State var friends = [
-        friend(name: "WX", icon: "lock.open.fill", school: "Presbyterian High School", Image: "sloth1", attack: 90.0, defence: 100.0, replySpeed: 80.0),
-        friend(name: "2", icon: "lock.open.fill", school: "School 1", Image: "sloth2", attack: 90.0, defence: 100.0, replySpeed: 50.0),
-        friend(name: "3", icon: "lock.open.fill", school: "School 2", Image: "sloth3", attack: 100.0, defence: 100.0, replySpeed: 0.0)]
+        friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 90.0, defence: 100.0, replySpeed: 80.0, types: [.normal, .water, .ice]),
+        friend(name: "2", icon: "lock.open.fill", school: "School 1", Image: "sloth2", attack: 90.0, defence: 100.0, replySpeed: 50.0, types: [.normal]),
+        friend(name: "Ms Goh", icon: "person.fill", school: "Presbyterian High", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 0.0, types: [.normal, .grass, .fire])]
     
     
     var body: some View {

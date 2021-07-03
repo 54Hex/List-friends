@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 //list
 struct friend: Identifiable {
     // Identifier. Something like IC liddat
@@ -24,4 +23,7 @@ struct friend: Identifiable {
     var attack: Double = Double.random(in: 0...100)
     var defence: Double = Double.random(in: 0...100)
     var replySpeed: Double = Double.random(in: 0...100)
+    
+    // types
+    var types: [VictimType]
 }

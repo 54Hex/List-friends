@@ -17,13 +17,14 @@ struct VictimDetailView: View {
                 Image(friend.Image)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 300)
-                Spacer()
+                    .frame(height: 250)
+                    .scaledToFill()
+                
                 
                 Image(friend.name)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 250, height: 250)
+                    .frame(width: 150, height: 150)
                     .mask(Circle())
                     .overlay(
                         Circle()
@@ -33,11 +34,11 @@ struct VictimDetailView: View {
                     .offset(x: 0, y: -250 / 2)
                     .shadow(radius: 6)
                     .padding(.bottom, -250 / 2)
-                    .offset(x: 0, y: -300)
+                    .offset(x: 0, y: -00)
                 
                 Text("\(Image(systemName: friend.icon)) \(friend.school)")
                     .font(.system(size: 24))
-                    .offset(x: 0, y: -300)
+                    .offset(x: 0, y: 10)
                     .padding()
                 
                 VStack {
@@ -63,6 +64,6 @@ struct VictimDetailView: View {
 
 struct VictimDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        VictimDetailView(friend: .constant(friend(name: "1", icon: "lock.open.fill", school: "School", Image: "sloth1", attack: 100.0, defence: 100.0, replySpeed: 100.0)))
+        VictimDetailView(friend: .constant(friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 100.0, types: [.normal, .ice, .water])))
     }
 }

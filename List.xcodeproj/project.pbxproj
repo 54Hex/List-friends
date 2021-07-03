@@ -15,6 +15,7 @@
 		0A25D5432686CB1700374E43 /* ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25D5422686CB1700374E43 /* ListUITests.swift */; };
 		0A25D5512686CC6400374E43 /* victim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25D5502686CC6400374E43 /* victim.swift */; };
 		0A25D5532686D7F300374E43 /* VictimDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A25D5522686D7F300374E43 /* VictimDetailView.swift */; };
+		0AB476142690103F00957D3B /* VictimType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB476132690103F00957D3B /* VictimType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0A25D5442686CB1700374E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A25D5502686CC6400374E43 /* victim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = victim.swift; sourceTree = "<group>"; };
 		0A25D5522686D7F300374E43 /* VictimDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimDetailView.swift; sourceTree = "<group>"; };
+		0AB476132690103F00957D3B /* VictimType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictimType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				0A25D5272686CB1600374E43 /* ContentView.swift */,
 				0A25D5522686D7F300374E43 /* VictimDetailView.swift */,
 				0A25D5502686CC6400374E43 /* victim.swift */,
+				0AB476132690103F00957D3B /* VictimType.swift */,
 				0A25D5292686CB1700374E43 /* Assets.xcassets */,
 				0A25D52E2686CB1700374E43 /* Info.plist */,
 				0A25D52B2686CB1700374E43 /* Preview Content */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB476142690103F00957D3B /* VictimType.swift in Sources */,
 				0A25D5282686CB1600374E43 /* ContentView.swift in Sources */,
 				0A25D5512686CC6400374E43 /* victim.swift in Sources */,
 				0A25D5262686CB1600374E43 /* ListApp.swift in Sources */,
