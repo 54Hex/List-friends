@@ -36,6 +36,13 @@ struct VictimDetailView: View {
                     .padding(.bottom, -250 / 2)
                     .offset(x: 0, y: -00)
                 
+                HStack {
+                    ForEach(friend.types, id: \.rawValue) { type in
+                        Label(type.rawValue, systemImage: type.getSymbolName())  
+                    }
+                }
+                .padding()
+                
                 Text("\(Image(systemName: friend.icon)) \(friend.school)")
                     .font(.system(size: 24))
                     .offset(x: 0, y: 10)

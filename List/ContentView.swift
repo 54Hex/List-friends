@@ -20,14 +20,26 @@ struct ContentView: View {
             List(0..<friends.count) { index in
                 NavigationLink(destination: VictimDetailView(friend: $friends[index])) {
                     Image(systemName: friends[index].icon)
+                        .font(.system(size: 20))
                     VStack(alignment: .leading) {
                         Text(friends[index].name)
+                            .font(.system(size: 23))
                             .font(.headline)
-                        Text(friends[index].school)
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                        HStack {
+                            Text(friends[index].school)
+                            .font(.system(size: 20))
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                            
+                            Spacer()
+                            
+                            ForEach(friends[index].types, id: \.rawValue) { type in
+                                Image(systemName: type.getSymbolName())
+                                    .font(.system(size: 20))
+                            }
+                            
+                        }
                         
-                        //vstack
                     }
                     
                 }
@@ -35,6 +47,7 @@ struct ContentView: View {
         }
         //title >:D
         .navigationTitle("Innocent Victims >:D")
+        
     }
 }
 
