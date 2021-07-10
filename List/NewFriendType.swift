@@ -86,7 +86,7 @@ struct NewFriendType: View {
                     .foregroundColor(.red)
                 }
             }
-            .navigationTitle("New Victims")
+            .navigationTitle("New Victim!!!")
         }
     }
 }
