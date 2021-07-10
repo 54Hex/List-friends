@@ -10,46 +10,48 @@ import SwiftUI
 struct ContentView: View {
     // array 
     @State var friends = [
-        friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 90.0, defence: 100.0, replySpeed: 80.0, types: [.normal, .water, .ice]),
-        friend(name: "2", icon: "lock.open.fill", school: "School 1", Image: "sloth2", attack: 90.0, defence: 100.0, replySpeed: 50.0, types: [.normal]),
-        friend(name: "Ms Goh", icon: "person.fill", school: "Presbyterian High", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 0.0, types: [.normal, .grass, .fire])]
+        Friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 90.0, defence: 100.0, replySpeed: 80.0, types: [.normal, .water, .ice]),
+        Friend(name: "TraceTogether", icon: "shield.lefthalf.fill", school: "GovTech", Image: "RickQR", attack: 100.0, defence: 100.0, replySpeed: 100.0, types: [.command]),
+        Friend(name: "Mg 🌊🏌️🦁", icon: "person.fill", school: "Presbyterian High", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 0.0, types: [.normal, .grass, .fire])]
+    
+    @State var isSheetPresented = false
     
     
     var body: some View {
         NavigationView {
-            List(0..<friends.count) { index in
+            List (0..<friends.count) { index in
                 NavigationLink(destination: VictimDetailView(friend: $friends[index])) {
                     Image(systemName: friends[index].icon)
-                        .font(.system(size: 20))
+                    
                     VStack(alignment: .leading) {
                         Text(friends[index].name)
-                            .font(.system(size: 23))
-                            .font(.headline)
+                            .bold()
+                        
                         HStack {
                             Text(friends[index].school)
-                            .font(.system(size: 20))
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
                             
                             Spacer()
                             
                             ForEach(friends[index].types, id: \.rawValue) { type in
                                 Image(systemName: type.getSymbolName())
-                                    .font(.system(size: 20))
                             }
-                            
+
                         }
-                        
+                        .foregroundColor(.gray)
                     }
-                    
                 }
             }
+            .navigationTitle("Innocent Victims >:D")
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: { isSheetPresented = true}, label: {
+                Image(systemName: "plus")
+            }))
+        }.sheet(isPresented: $isSheetPresented) {
+            NewFriendType(friends: $friends)
         }
-        //title >:D
-        .navigationTitle("Innocent Victims >:D")
-        
+
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

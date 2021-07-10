@@ -8,7 +8,9 @@
 import Foundation
 
 //list
-struct friend: Identifiable {
+struct Friend: Identifiable, Equatable, Codable {
+    
+    
     // Identifier. Something like IC liddat
     var id = UUID()
     
@@ -25,5 +27,5 @@ struct friend: Identifiable {
     var replySpeed: Double = Double.random(in: 0...100)
     
     // types
-    var types: [VictimType]
+    var types: [FriendType]
 }

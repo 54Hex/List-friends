@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VictimDetailView: View {
     
-    @Binding var friend: friend
+    @Binding var friend: Friend
     
     var body: some View {
         ScrollView {
@@ -23,12 +23,15 @@ struct VictimDetailView: View {
                 
                 Image(friend.name)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .frame(width: 150, height: 150)
+
                     .mask(Circle())
+                    
+                
                     .overlay(
                         Circle()
-                            .stroke(lineWidth: 8)
+                            .stroke(lineWidth: 5)
                             .foregroundColor(.white)
                     )
                     .offset(x: 0, y: -250 / 2)
@@ -71,6 +74,6 @@ struct VictimDetailView: View {
 
 struct VictimDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        VictimDetailView(friend: .constant(friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 100.0, types: [.normal, .ice, .water])))
+        VictimDetailView(friend: .constant(Friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 100.0, types: [.normal, .ice, .water])))
     }
 }

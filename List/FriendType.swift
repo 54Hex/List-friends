@@ -8,13 +8,14 @@
 import Foundation
 
 // enum
-enum VictimType: String {
+enum FriendType: String, Codable {
     case normal = "normal"
     case fire = "fire"
     case water = "water"
     case grass = "grass"
     case electric = "electric"
     case ice = "ice"
+    case command = "I'm always here for u - GovTech"
     
     // function
     func getSymbolName() -> String {
@@ -32,6 +33,8 @@ enum VictimType: String {
             return "bolt"
         case .ice:
             return "snow"
+        case .command:
+            return "command"
         }
     }
 }
