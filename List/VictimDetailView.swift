@@ -25,10 +25,10 @@ struct VictimDetailView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)
-
+                    
                     .mask(Circle())
                     
-                
+                    
                     .overlay(
                         Circle()
                             .stroke(lineWidth: 5)
@@ -41,7 +41,12 @@ struct VictimDetailView: View {
                 
                 HStack {
                     ForEach(friend.types, id: \.rawValue) { type in
-                        Label(type.rawValue, systemImage: type.getSymbolName())  
+                        Label(type.rawValue, systemImage: type.getSymbolName())
+                            .padding(10)
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                        
                     }
                 }
                 .padding()
