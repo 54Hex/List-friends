@@ -19,6 +19,7 @@ struct NewFriendType: View {
                                Image: "",
                                attack: 0,
                                defence: 0,
+                               replySpeed: 0,
                                types: [.normal])
     
     var body: some View {
@@ -63,7 +64,7 @@ struct NewFriendType: View {
                             .frame(width: 100, alignment: .leading)
                         
                         Slider(value: $friend.attack,
-                               in: 0...15,
+                               in: 0...100,
                                step: 1)
                     }
                     
@@ -72,7 +73,15 @@ struct NewFriendType: View {
                             .frame(width: 100, alignment: .leading)
                         
                         Slider(value: $friend.defence,
-                               in: 0...15,
+                               in: 0...100,
+                               step: 1)
+                    }
+                    
+                    HStack {
+                        Text("Reply Speed")
+                            .frame(width: 100, alignment: .leading)
+                        Slider(value: $friend.replySpeed,
+                               in: 0...100,
                                step: 1)
                     }
                 }
