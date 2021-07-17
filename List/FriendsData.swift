@@ -14,7 +14,7 @@ class FriendsData: ObservableObject {
     
     let sampleFriends = [Friend(name: "Wei Xuan", icon: "bolt.horizontal", school: "Presbyterian High", Image: "ws", attack: 90.0, defence: 100.0, replySpeed: 80.0, types: [.normal, .water, .ice]),
         Friend(name: "TraceTogether", icon: "shield.lefthalf.fill", school: "GovTech", Image: "RickQR", attack: 100.0, defence: 100.0, replySpeed: 100.0, types: [.command]),
-        Friend(name: "🦁", icon: "person.fill", school: "nO", Image: "ws", attack: 100.0, defence: 100.0, replySpeed: 0.0, types: [.normal, .grass, .fire])]
+        Friend(name: "🦁", icon: "person.fill", school: "School", Image: "ws", attack: 0.0, defence: 0.0, replySpeed: 0.0, types: [.normal])]
     
     
     func getArchiveURL() -> URL {

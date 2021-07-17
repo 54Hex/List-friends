@@ -27,7 +27,10 @@ struct NewFriendType: View {
             Form {
                 Section(header: Text("Information")) {
                     TextField("Name", text: $friend.name)
+                        .disableAutocorrection(true)
+                        .keyboardType(.default)
                     TextField("School", text: $friend.school)
+                        .disableAutocorrection(true)
                     
                     HStack {
                         Image(systemName: friend.icon)
@@ -80,7 +83,7 @@ struct NewFriendType: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                     
-                    Button("Discard Friend") {
+                    Button("Discard Victim") {
                         presentationMode.wrappedValue.dismiss()
                     }
                     .foregroundColor(.red)
